@@ -1,30 +1,24 @@
-version: 0.2
 
+version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      python: 3.7
     commands:
-      - echo Entered the install phase...
-      - echo $PWD
-      - mkdir terraform && cd terraform
-      - export PATH=$PATH:$PWD
-      - echo $PWD
-      - echo $PATH
+      - export TF_VERSION=1.0.6
+      - "cd /usr/bin"
+      - "curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip"
+      - "unzip -o terraform.zip"
 
-      - wget https://releases.hashicorp.com/terraform/1.0.6/terraform_1.0.6_linux_amd64.zip
-      - unzip terraform_1.0.6_linux_amd64.zip
-      - ls -al
-      - chmod +x terraform
-      
-      - cd ..
-      - mkdir build-environment && cd build-environment
-  pre_build:
-    commands:
-      - echo Entered the pre_build phase...
   build:
     commands:
-      - echo Entered the build phase...
-      - terraform -v
+      - terraform --version
+
   post_build:
     commands:
-      - echo Entered the post_build phase...
+      - echo "Terraform completed on `date`"
+
+artifacts:
+  files:
+    - '**/*'
