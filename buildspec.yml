@@ -8,10 +8,10 @@ phases:
     commands:
       - export TF_VERSION=1.0.6
       - "cd /usr/bin"
-      - "curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip"
+      - "curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_arm64.zip"
       - "unzip -o terraform.zip"
       - "chmod +x terraform"
-      - "ls -al"
+      - "terraform --version"
 
   build:
     commands:
