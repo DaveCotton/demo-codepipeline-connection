@@ -5,12 +5,20 @@ phases:
   install:
     commands:
       - echo Entered the install phase...
+      - echo $pwd
+      - mkdir terraform && cd terraform
+      - wget https://releases.hashicorp.com/terraform/1.0.6/terraform_1.0.6_linux_amd64.zip
+      - unzip terraform_1.0.6_linux_amd64.zip
+      - export PATH=$PATH:.
+      - cd ..
+      - mkdir build-environment && cd build-environment
   pre_build:
     commands:
       - echo Entered the pre_build phase...
   build:
     commands:
       - echo Entered the build phase...
+      - terraform -v
   post_build:
     commands:
       - echo Entered the post_build phase...
