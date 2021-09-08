@@ -11,11 +11,11 @@ phases:
       - "curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_arm64.zip"
       - "unzip -o terraform.zip"
       - "chmod +x terraform"
-      - "terraform --version"
 
   build:
     commands:
-      - terraform --version
+      - terraform init -input=false
+      - terraform apply -input=false
 
   post_build:
     commands:
