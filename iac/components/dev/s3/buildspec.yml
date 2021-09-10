@@ -18,8 +18,9 @@ phases:
 
   build:
     commands:
-      - "echo $BUILD_HOME/$BUILD_ENV/$BUILD_PIPELINE"
-      - "cd $BUILD_HOME/$BUILD_ENV/$BUILD_PIPELINE"
+      - "echo $BUILD_HOME/${MY_BUILD_ENV}/$BUILD_PIPELINE"
+      - "echo $BUILD_HOME/$MY_BUILD_ENV/$BUILD_PIPELINE"
+      - "cd $BUILD_HOME/$MY_BUILD_ENV/$BUILD_PIPELINE"
       - terraform init -input=false
       - terraform apply -auto-approve
 
