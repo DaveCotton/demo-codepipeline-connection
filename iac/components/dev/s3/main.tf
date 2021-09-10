@@ -10,6 +10,10 @@ terraform {
 # Configure the AWS Provider
 provider "aws" {
   region = "us-west-2"
+
+  assume_role {
+    role_arn = "arn:aws:iam::574610850918:role/cross-account-poc"
+  }
 }
 
 resource "aws_s3_bucket" "b" {
