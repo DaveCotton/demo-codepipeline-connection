@@ -1,5 +1,5 @@
 
-var account_number {
+variable "account_number" {
 
     type = string
 }
