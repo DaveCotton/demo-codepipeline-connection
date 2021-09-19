@@ -12,7 +12,7 @@ provider "aws" {
   region = "us-west-2"
 
   assume_role {
-    role_arn = "arn:aws:iam::${var.account_number}:role/cross-account-poc"
+    role_arn = "arn:aws:iam::${var.account_number}:role/cross-account-poc-1"
   }
 }
 
