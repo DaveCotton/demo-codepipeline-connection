@@ -39,7 +39,7 @@ resource "aws_iam_role" "cross-account-poc" {
         Action = "sts:AssumeRole"
         Effect = "Allow"
         "Principal": {
-          "AWS": "arn:aws:iam::${var.deployment_pipeline_account_number}:root"
+          "AWS": "arn:aws:iam::${var.pipeline_account_number}:root"
         }
       },
     ]
