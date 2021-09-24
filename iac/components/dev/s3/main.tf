@@ -19,6 +19,7 @@ provider "aws" {
 
   assume_role {
     role_arn = "arn:aws:iam::${var.target_account_number}:role/cross-account-poc"
+    session_name = "REMOTE_SESSION"
   }
 }
 
