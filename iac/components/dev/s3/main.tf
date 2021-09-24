@@ -5,6 +5,12 @@ terraform {
       source  = "hashicorp/aws"
     }
   }
+
+  backend "s3" {
+    region = "us-west-2"
+    bucket = "tf-state-cross-account"
+    key    = "dev-s3"
+  }
 }
 
 # Configure the AWS Provider
