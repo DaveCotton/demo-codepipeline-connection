@@ -16,11 +16,6 @@ terraform {
 # Configure the AWS Provider
 provider "aws" {
   region = "us-west-2"
-
-  assume_role {
-    role_arn = "arn:aws:iam::${var.target_account_number}:role/cross-account-poc"
-    session_name = "REMOTE_SESSION"
-  }
 }
 
 resource "aws_s3_bucket" "b" {
