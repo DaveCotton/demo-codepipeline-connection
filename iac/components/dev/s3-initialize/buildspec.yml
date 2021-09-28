@@ -1,0 +1,20 @@
+
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+    commands:
+  
+  build:
+    commands:
+      - "echo The passed value is $BUCKET_ARN"
+
+  post_build:
+    commands:
+      - echo "Terraform completed on `date`"
+
+artifacts:
+  files:
+    - '**/*'
