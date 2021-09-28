@@ -33,3 +33,8 @@ resource "aws_s3_bucket" "b" {
     Environment = "Dev"
   }
 }
+
+output "bucket_arn" {
+  description = "bucket arn"
+  value       = aws_s3_bucket.b.arn
+}

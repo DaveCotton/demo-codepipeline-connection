@@ -23,6 +23,9 @@ phases:
       - "cd $BUILD_HOME/$BUILD_ENV/$BUILD_PIPELINE"
       - terraform init -input=false
       - terraform apply -auto-approve
+      
+      - export BUCKET_ARN=terraform query bucket_arn
+      - echo "the output bucket arn is $BUCKET_ARN"
 
   post_build:
     commands:
