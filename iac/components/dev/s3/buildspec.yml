@@ -2,8 +2,6 @@
 version: 0.2
 
 env:
-  variables:
-    - BUCKET_ARN
   exported-variables:
     - BUCKET_ARN
 
