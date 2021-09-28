@@ -28,7 +28,7 @@ phases:
       - terraform init -input=false
       - terraform apply -auto-approve
 
-      - export BUCKET_ARN=terraform output -raw bucket_arn
+      - export BUCKET_ARN=$(terraform output -raw bucket_arn)
       - echo "the output bucket arn is $BUCKET_ARN"
 
   post_build:
