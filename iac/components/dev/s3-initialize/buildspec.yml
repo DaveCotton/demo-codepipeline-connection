@@ -9,7 +9,7 @@ phases:
   
   build:
     commands:
-      - "echo The passed value is $BUCKET_ARN"
+      - "echo The passed value is $MY_BUCKET_ARN"
 
   post_build:
     commands:
